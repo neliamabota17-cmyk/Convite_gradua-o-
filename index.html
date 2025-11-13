@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Convite de Graduação — Nélia Mabota🌸</title>
+  <title>Convite de Graduação — Nélia Mabota 🌸</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -13,73 +13,158 @@
       --prim: #b37a6a;
       --sec: #7b4a3e;
       --dark: #111010;
+      --glow: #e4c1b0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html, body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
       font-family: 'Poppins', sans-serif;
-      overflow-y: auto; /* ✅ permite scroll */
+      height: 100%;
+      overflow-x: hidden;
+      color: #fff;
     }
 
     body {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.6)),
-                  url('foto1.jpg') center/cover no-repeat fixed;
-      color: #fff;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.6)),
+                  url('foto1.jpg') center/cover fixed no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* Tela inicial */
+    #intro {
+      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
-      padding: 40px 0;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(3px);
+      padding: 20px;
+    }
+
+    #intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    #intro p {
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 340px;
+    }
+
+    .enter-btn {
+      margin-top: 20px;
+      background: linear-gradient(90deg, var(--prim), var(--sec));
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .enter-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Card do convite */
+    #main {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
     }
 
     .card {
-      width: 360px;
+      width: 380px;
       max-width: 90%;
       border-radius: 24px;
       background: rgba(0, 0, 0, 0.55);
-      padding: 26px 20px;
+      padding: 28px 20px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.5);
       text-align: center;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
     }
 
-    .title {
+    /* She Did It */
+    .she-did-it {
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    .she-did-it h1 {
+      margin: 0;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .she {
       font-family: 'Playfair Display', serif;
-      font-size: 46px;
+      font-size: 48px;
       letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: slideDown 1.2s ease forwards;
     }
 
     .did {
       font-family: 'Great Vibes', cursive;
-      font-size: 40px;
-      margin-top: -10px;
+      font-size: 52px;
+      color: var(--prim);
+      text-shadow: 0 0 8px var(--glow);
+      animation: glow 3s ease-in-out infinite alternate;
     }
 
     .it {
       font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      margin-top: -10px;
+      font-size: 36px;
+      color: #fff;
+      letter-spacing: 1px;
+      animation: slideUp 1.2s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px var(--prim), 0 0 10px var(--prim); }
+      to { text-shadow: 0 0 15px var(--glow), 0 0 25px var(--glow); }
     }
 
     .date {
       font-size: 13px;
       letter-spacing: 3px;
-      margin: 6px 0 16px;
+      margin: 10px 0 18px;
       opacity: 0.9;
     }
 
     .text {
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 15px;
+      line-height: 1.6;
       opacity: 0.95;
-      margin-bottom: 16px;
-      animation: fadeIn 2s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      margin-bottom: 18px;
     }
 
     .info {
@@ -87,7 +172,7 @@
       background: rgba(255,255,255,0.08);
       padding: 10px;
       border-radius: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       line-height: 1.6;
     }
 
@@ -99,8 +184,8 @@
       border-radius: 22px;
       text-decoration: none;
       font-weight: 600;
-      margin: 5px;
-      transition: 0.2s;
+      margin: 6px;
+      transition: 0.3s;
     }
 
     .btn:hover {
@@ -123,96 +208,80 @@
       margin-top: 16px;
       opacity: 0.85;
     }
-
-    /* Botão de play da música */
-    #playMusic {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(90deg, var(--prim), var(--sec));
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      display: none;
-    }
-
-    #playMusic:hover {
-      transform: scale(1.1);
-    }
   </style>
 </head>
 <body>
 
+  <!-- Tela inicial -->
+  <section id="intro">
+    <h2>🎓 Convite especial!✨ </h2>
+    <p>Entre noites de estudo, risos e desafios, nasceu um novo capítulo: a minha Graduação!
+        Agora, convido-te a partilhar comigo esta alegria -
+        Um brinde à coragem, à fé e à realização dos sonhos. 🌷
+💕 Clica abaixo e entra nesta celebração de amor e conquistas. 💖</p>
+    <button class="enter-btn" onclick="entrarConvite()">Entrar na celebração 🎶</button>
+  </section>
+
   <!-- Música de fundo -->
-  <audio id="bgMusic" autoplay loop>
+  <audio id="bgMusic" loop>
     <source src="iam woman.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="card">
-    <div class="title">SHE</div>
-    <div class="did">did</div>
-    <div class="it">It</div>
-    <div class="date">12 • DEZ • 2025</div>
+  <!-- Convite principal -->
+  <section id="main">
+    <div class="card">
+      <div class="she-did-it">
+        <h1 class="she">She</h1>
+        <h1 class="did">did</h1>
+        <h1 class="it">It ✨</h1>
+      </div>
 
-    <div class="text">
-      💕Com o coração cheio de gratidão, celebro o fim de uma etapa e o início de um novo sonho.
-      Cada desafio foi um degrau rumo à realização de um grande sonho: conquistar o meu diploma em Informática.
-      E nada seria mais especial do que viver este momento com pessoas que fizeram parte dessa caminhada.<br>
-     💫 Venha comemorar comigo esta conquista!🌸💖
+      <div class="date">12 • DEZEMBRO • 2025 • 17h00</div>
+
+      <div class="text">
+        💕 Com o coração cheio de gratidão, celebro o fim de uma etapa e o início de um novo sonho.
+       Cada desafio foi um degrau rumo à realização de um grande sonho: conquistar o meu diploma em Informática.
+       E nada seria mais especial do que viver este momento com pessoas que fizeram parte dessa caminhada.
+     💫 Venha comemorar comigo esta conquista!” 💫🌸  
+      </div>
+
+      <div class="info">
+        📍 <strong>Local:</strong> Siduava<br>
+        🕒 <strong>Hora:</strong> 17h00<br>
+      </div>
+
+      <div>
+        <a class="btn" href="https://wa.me/258849299853?text=Olá%20Nélia!%20Confirmo%20minha%20presença%20na%20tua%20graduação!%20🎓" target="_blank">Confirmar Presença 💌</a>
+        <a class="btn" href="https://maps.app.goo.gl/8mZMABGJPWnz2gdS6" target="_blank">Ver Localização 📍</a>
+        <a class="btn" onclick="toggleDress()">Dress Code 👗</a>
+      </div>
+
+      <div class="dress" id="dress">
+        <p><em>💕💖A paleta de cores abaixo é apenas uma sugestão suave, inspirada na harmonia e na alegria deste momento.
+        Mas o verdadeiro Dress Code é a felicidade de estares presente.
+        Veste o que te faz sentir bonito(a), confiante e especial — como a ocasião merece. 💫 🌸 💫</em></p>
+        <img src="paletas.jpg" alt="Paleta de cores sugerida">
+      </div>
+
+      <div class="footer">
+        ✨ Com carinho, <strong>Nélia Mabota</strong> ✨💖
+      </div>
     </div>
-
-    <div class="info">
-      📍 <strong>Local:</strong> Siduava<br>
-      🕒 <strong>Hora:</strong> 17h00<br>
-    </div>
-
-    <div>
-      <a class="btn" href="https://wa.me/258849299853?text=Olá%20Nélia!%20Confirmo%20minha%20presença%20na%20tua%20formatura!%20🎓" target="_blank">Confirmar Presença 💌</a>
-      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Siduava" target="_blank">Ver Localização 📍</a>
-      <a class="btn" onclick="toggleDress()">Dress Code 👗</a>
-    </div>
-
-    <div class="dress" id="dress">
-      <p><em>💕💖A paleta de cores abaixo é apenas uma sugestão suave, inspirada na harmonia e na alegria deste momento.
-    Mas o verdadeiro Dress Code é a felicidade de estares presente.
-    Use o que te faz sentir bonito(a), confiante e especial — como a ocasião merece.🌸 💫</em></p>
-      <img src="paletas.jpg" alt="Paleta de cores sugerida">
-    </div>
-
-    <div class="footer">
-      ✨ Com carinho, <strong>Nélia Mabota</strong> ✨💖
-    </div>
-  </div>
-
-  <!-- Botão para ativar música se o autoplay falhar -->
-  <button id="playMusic">🎵</button>
+  </section>
 
   <script>
+    function entrarConvite() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('main').style.display = 'flex';
+      const audio = document.getElementById('bgMusic');
+      audio.volume = 0.7;
+      audio.play().catch(() => {});
+    }
+
     function toggleDress() {
       const d = document.getElementById('dress');
       d.style.display = d.style.display === 'block' ? 'none' : 'block';
     }
-
-    // Música
-    const audio = document.getElementById('bgMusic');
-    const playBtn = document.getElementById('playMusic');
-    audio.volume = 0.7;
-
-    audio.play().then(() => {
-      playBtn.style.display = 'none';
-    }).catch(() => {
-      playBtn.style.display = 'block';
-    });
-
-    playBtn.addEventListener('click', () => {
-      audio.play();
-      playBtn.style.display = 'none';
-    });
   </script>
 </body>
 </html>
